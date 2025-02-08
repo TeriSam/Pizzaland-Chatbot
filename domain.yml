@@ -1,0 +1,72 @@
+version: "3.1"
+
+intents:
+  - order_pizza
+  - track_order
+  - modify_order
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - inform
+  - ask_pizza_options
+  - ask_store_hours
+  - ask_weather 
+
+entities:
+  - pizza_type
+  - pizza_size
+  - modification_details
+
+slots:
+  pizza_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: pizza_type
+  pizza_size:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: pizza_size
+  modification_details:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+  - text: "Hello! Welcome to Pizzaland! How can I help you today?"
+  
+  utter_goodbye:
+  - text: "Goodbye! Enjoy your pizza!"
+
+  utter_ask_pizza_details:
+  - text: "What kind of pizza would you like? (e.g., Margherita, Pepperoni, etc.)"
+
+  utter_ask_modification_details:
+  - text: "What changes would you like to make to your order?"
+
+  utter_default:
+  - text: "I'm sorry, I didn't understand that. Can you please rephrase?"
+   
+  utter_pizza_options:
+  - text: "We offer Margherita, Pepperoni, BBQ Chicken, and Veggie pizzas."
+
+  utter_affirm:
+  - text: "Great! Let me take care of that for you."
+
+  utter_deny:
+  - text: "No problem! Let me know if you need anything else."
+
+actions:
+  - action_confirm_order
+  - action_track_order
+  - action_modify_order
+  - action_cancel_order
+  - action_check_store_hours
+  - action_check_weather  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

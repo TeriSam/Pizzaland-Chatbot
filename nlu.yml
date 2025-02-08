@@ -1,0 +1,95 @@
+version: "3.1"
+
+nlu:
+- intent: order_pizza
+  examples: |
+    - I want to order a [large](pizza_size) [Margherita](pizza_type) pizza
+    - Can I get a [small](pizza_size) [Pepperoni](pizza_type) pizza?
+    - I would like to order a [medium](pizza_size) [Veggie](pizza_type) pizza
+    - Give me a [large](pizza_size) [BBQ Chicken](pizza_type) pizza
+    - I want a [small](pizza_size) pizza
+    - I want a [large](pizza_size) pizza
+    - I want to place an order
+
+- intent: ask_pizza_options
+  examples: |
+    - What pizzas do you have?
+    - Show me the menu
+    - What are my pizza options?
+    - Tell me the available pizzas
+
+- intent: track_order
+  examples: |
+    - Where is my pizza?
+    - Can you track my order?
+    - I want to check my order status
+    - What is the status of my order?
+    - How long will my delivery take?
+
+- intent: modify_order
+  examples: |
+    - Can I change my order?
+    - I want to modify my pizza toppings
+    - I need to cancel my order
+    - Can I add another pizza to my order?
+    - I made a mistake, can I update my order?
+    - I want to update my order
+    - I need to change my order details
+    - Can I customize my pizza?
+    - I want to add more items to my order
+    - I need to remove something from my order
+
+- intent: inform
+  examples: |
+    - I want to add mushrooms
+    - Remove olives from my order
+    - I want to cancel my order
+    - Cancel my pizza order
+    - Can you cancel my order?
+    - I need to cancel my pizza
+    - I want to add extra cheese
+    - Remove onions from my pizza
+
+- intent: ask_store_hours
+  examples: |
+    - What time do you open?
+    - When do you open?
+    - Can you tell me your opening hours?
+    - Are you open now?
+    - What are your store hours?
+
+- intent: ask_weather
+  examples: |
+    - How's the weather?
+    - What's the weather like?
+    - Will it rain today?
+    - Is it sunny outside?
+    - Can you tell me the weather?
+
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey there
+    - Good morning
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Thanks, bye!
+
+- intent: affirm
+  examples: |
+    - Yes
+    - Sure
+    - Absolutely
+    - Okay
+
+- intent: deny
+  examples: |
+    - No
+    - I don’t want that
+    - No thanks
+    - Not right now

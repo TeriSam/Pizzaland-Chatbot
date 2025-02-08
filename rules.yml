@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Handle fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- rule: Handle affirm
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Handle deny
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: Respond to store hours query
+  steps:
+  - intent: ask_store_hours
+  - action: action_check_store_hours
+
+- rule: Respond to weather query
+  steps:
+  - intent: ask_weather
+  - action: action_check_weather

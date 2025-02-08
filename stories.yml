@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+- story: order a pizza
+  steps:
+  - intent: order_pizza
+  - action: action_confirm_order
+
+- story: order a pizza with known type
+  steps:
+  - intent: order_pizza
+  - slot_was_set:
+      - pizza_type: some_value
+  - action: action_confirm_order
+
+- story: ask about pizza options
+  steps:
+  - intent: ask_pizza_options
+  - action: utter_pizza_options
+
+- story: track an order
+  steps:
+  - intent: track_order
+  - action: action_track_order
+
+- story: modify an order
+  steps:
+  - intent: modify_order
+  - action: utter_ask_modification_details
+  - intent: inform
+  - action: action_modify_order
+
+- story: cancel an order
+  steps:
+  - intent: modify_order
+  - action: utter_ask_modification_details
+  - intent: inform
+  - slot_was_set:
+      - modification_details: "cancel"
+  - action: action_modify_order
+
+- story: ask store hours
+  steps:
+  - intent: ask_store_hours
+  - action: action_check_store_hours
+
+- story: ask about weather
+  steps:
+  - intent: ask_weather
+  - action: action_check_weather
